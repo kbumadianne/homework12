@@ -1,6 +1,8 @@
 # homework12
 leaflet-challenge
 
+JavaScript file : Starter_Code/static/js/logic.js
+
 ### Earthquake Visualization Map ###
 
 This project visualizes global earthquake data from the United States Geological Survey (USGS) in an interactive map using Leaflet and D3.js. The map shows recent earthquake activity, where each earthquake is represented by a circle marker. The size of the marker is proportional to the earthquake's magnitude, and the color of the marker represents the depth of the earthquake
