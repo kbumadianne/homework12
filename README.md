@@ -13,10 +13,10 @@ Earthquake Data: Data is fetched from the USGS GeoJSON Feed.
 Color-coded Markers: Earthquake markers are color-coded based on the depth of the earthquake.
 Sized Markers: The size of the markers is proportional to the magnitude of the earthquake.
 Popup Information: Clicking on any earthquake marker displays detailed information, including:
+Location
+Coordinates
 Magnitude
 Depth
-Location
-Time of occurrence
 Legend: A legend is included to help interpret the depth of the earthquakes based on their color.
 
 ## Data Source ##
@@ -26,5 +26,5 @@ The earthquake data used for this visualization comes from the USGS Earthquake F
 ## Libraries Used ##
 
 Leaflet.js: A leading open-source JavaScript library for mobile-friendly interactive maps.
-Map tiles are sourced from Stadia Maps and OpenTopoMap.
+Map tiles are sourced from Street Maps and OpenTopoMap.
 D3.js: A JavaScript library for manipulating documents based on data, used here to fetch and process the GeoJSON earthquake data.
