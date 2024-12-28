@@ -3,19 +3,21 @@ const map = L.map('map').setView([45, -30], 2);
 
 // Create base layers for the map
 let baseLayers = {
-    "stadiaOutdoors": L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}.png', {
-        maxZoom: 20,
-        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    "StreetMap": L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl={language}', {
+      attribution: 'Map data &copy;2024 Google',
+      subdomains: '0123',
+      maxZoom: 22,
+      language: 'en'
     }),
     "OpenTopoMap": L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.opentopomap.org/copyright">OpenTopoMap</a> contributors',
-        maxZoom: 17,
-        minZoom: 3
+      attribution: '&copy; <a href="https://www.opentopomap.org/copyright">OpenTopoMap</a> contributors',
+      maxZoom: 17,
+      minZoom: 3
     })
-};
+  };
 
 // Add the default map (Stadia Outdoors) to the map
-baseLayers["stadiaOutdoors"].addTo(map);
+baseLayers["StreetMap"].addTo(map);
 
 // Add layer control to switch between layers
 L.control.layers(baseLayers).addTo(map);
@@ -58,10 +60,10 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
             fillOpacity: 0.7
         })
         .bindPopup(`
-            <h3>${place}</h3>
+            <h3>Location: ${place}</h3>
+             <p>Coordinates: ${latitude}:${longitude}</p>
             <p>Magnitude: ${magnitude}</p>
             <p>Depth: ${depth} km</p>
-            <p>Time: ${time}</p>
         `)
         .addTo(map);
     });
